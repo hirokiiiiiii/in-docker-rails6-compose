@@ -1,0 +1,23 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  username: postgres
+  possword: ""
+
+development:
+  <<: *default
+  database: rails6_compose_development
+
+
+test:
+  <<: *default
+  database: rails6_compose_test
+
+production:
+  <<: *default
+  database: rails6_compose_production
+  username: rails6_compose
+  password: <%= ENV['RAILS6_COMPOSE_DATABASE_PASSWORD'] %>
