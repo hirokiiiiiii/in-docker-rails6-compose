@@ -19,5 +19,5 @@ test:
 production:
   <<: *default
   database: rails6_compose_production
-  username: rails6_compose
+  username: postgres
   password: <%= ENV['RAILS6_COMPOSE_DATABASE_PASSWORD'] %>
